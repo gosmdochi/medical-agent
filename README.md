@@ -234,20 +234,6 @@ async def tool_call_logging_middleware(request, handler):
 
 ---
 
-## 프로젝트 체크리스트
-
-- [x] 팀 도메인 선정 (의료 정보 제공 및 안내)
-- [x] AI 프롬프트를 사용하여 도구 코드 생성 (`day7_team_project_template.ipynb`)
-- [x] 4개 커스텀 도구 생성 및 `tools.py`에 정리
-- [x] 각 도구별 정상/엣지/에러 케이스 테스트 (`day7_team_project_template.ipynb`)
-- [x] `agent.py`에 커스텀 도구 통합
-- [x] `middleware.py` 안전장치 미들웨어 구현 및 `agent.py`에 연결
-- [x] `symptom-navigation` skill 작성 및 `load_skill`/`skill_injection_middleware` 연동
-- [ ] LangGraph Studio로 통합 테스트 (로컬 실행 후 스크린샷 첨부 필요)
-- [ ] 팀원별 코드 리뷰
-
----
-
 ## 참고 자료
 
 - [LangChain Tools 문서](https://python.langchain.com/docs/modules/agents/tools/)
