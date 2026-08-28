@@ -147,10 +147,10 @@ async def tool_call_logging_middleware(request, handler):
 ---
 
 ## LangGraph Studio 실행 화면 / 결과물 예시
+'''
 <img width="3280" height="2460" alt="image" src="https://github.com/user-attachments/assets/c7e50de0-872b-4df4-8923-800f01ce1f12" />
 <img width="3280" height="2460" alt="image" src="https://github.com/user-attachments/assets/529a50e8-267a-45bd-b039-c655d0d4cca3" />
-
-```
+'''
 
 ---
 
