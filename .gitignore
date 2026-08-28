@@ -1,0 +1,15 @@
+# 환경 변수 (API Key 등 민감 정보 포함 - 깃 업로드 금지)
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 로그 / 백업
+logs/
+backup/
+
+# LangGraph / Jupyter
+.langgraph_api/
+.ipynb_checkpoints/

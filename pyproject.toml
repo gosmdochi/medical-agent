@@ -1,0 +1,24 @@
+[project]
+name = "medical-info-agent"
+version = "1.0.0"
+description = "AI 서비스 실무 개발 과정 - 팀 프로젝트 (의료 정보 제공 및 안내 에이전트)"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "langchain>=1.2.0",
+    "langchain-openai>=1.1.0",
+    "langchain-core>=1.2.0",
+    "langchain-community>=0.4.0",
+    "langchain-tavily>=0.2.0",
+    "langgraph-cli[inmem]>=0.4.0",
+    "langgraph>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "jupyter>=1.1.0",
+    "ipykernel>=6.29.0",
+    "pydantic>=2.0.0",
+    "typing-extensions>=4.12.0",
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.0",
+    "pandas>=2.0.0",
+    "streamlit>=1.40.0",
+    "requests>=2.31.0",
+]
