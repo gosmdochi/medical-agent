@@ -18,81 +18,7 @@ LangGraph 기반 에이전트에 통합하고, `skills/symptom-navigation/skill.
 검색 없이 119/응급실 안내를 최우선으로 제공합니다. 일반 증상이 감지되면
 `symptom-navigation` skill 절차(증상 확인 → 진료과 추천 → 병원 찾기 → 진료 여부 확인 →
 방문 체크리스트)를 따라 단계별로 안내합니다.
-
----
-
-## 환경 설정
-
-### 1. uv 설치
-
-**Windows (PowerShell)**
-```powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
-
-**macOS / Linux**
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### 2. 가상환경 생성 및 패키지 설치
-
-```bash
-# 이 저장소(team-agent) 루트에서 실행
-uv sync
-
-# 가상환경 활성화 (Windows)
-.venv\Scripts\activate
-
-# 가상환경 활성화 (macOS/Linux)
-source .venv/bin/activate
-```
-
-### 3. Jupyter Notebook 커널 등록 (day7 노트북 실행용)
-
-**Windows**
-```powershell
-.venv\Scripts\python.exe -m ipykernel install --user --name=medical-info-agent --display-name="medical info agent"
-```
-
-**macOS/Linux**
-```bash
-.venv/bin/python -m ipykernel install --user --name=medical-info-agent --display-name="medical info agent"
-```
-
-### 4. 환경 변수 설정
-
-`.env`는 API Key 등 민감 정보를 담고 있어 **깃에 업로드하지 않습니다** (`.gitignore` 처리됨).
-`.env.example`을 복사하여 본인의 `.env` 파일을 로컬에 생성하세요.
-
-```bash
-cp .env.example .env
-```
-
-```bash
-# .env
-OPENAI_API_KEY=your_openai_api_key_here
-TAVILY_API_KEY=your_tavily_api_key_here
-PYTHONUTF8=1
-```
-
-> ⚠️ 이전에 배포된 `.env`에 실제 키로 보이는 값이 포함되어 있었습니다.
-> 이미 외부(팀 채널, 압축 파일 등)로 공유되었다면 **OpenAI/Tavily 콘솔에서 해당
-> 키를 즉시 폐기(rotate)하고 새 키를 발급**받으시길 권장합니다.
-
-### 5. LangGraph Studio 실행
-
-**Windows (PowerShell)**
-```powershell
-$env:PYTHONUTF8=1; uv run langgraph dev --no-reload --allow-blocking
-```
-
-**Mac/Linux (bash/zsh)**
-```bash
-PYTHONUTF8=1 uv run langgraph dev --no-reload --allow-blocking
-```
-
-브라우저에서 `http://127.0.0.1:2024`가 자동으로 열립니다.
+<img width="1136" height="608" alt="스크린샷 2026-08-28 133819" src="https://github.com/user-attachments/assets/5e707ead-4f59-4bd2-a697-1b0cd9728bb4" />
 
 ---
 
@@ -221,15 +147,9 @@ async def tool_call_logging_middleware(request, handler):
 ---
 
 ## LangGraph Studio 실행 화면 / 결과물 예시
+<img width="3280" height="2460" alt="image" src="https://github.com/user-attachments/assets/c7e50de0-872b-4df4-8923-800f01ce1f12" />
+<img width="3280" height="2460" alt="image" src="https://github.com/user-attachments/assets/529a50e8-267a-45bd-b039-c655d0d4cca3" />
 
-> 아래 영역에 실제로 `uv run langgraph dev`로 실행한 LangGraph Studio 화면과
-> 에이전트 응답 결과 스크린샷을 캡처해서 첨부해 주세요.
-> (로컬 환경에서 직접 실행해야 얻을 수 있는 화면이라 이 문서에는 자리표시자만 두었습니다.)
-
-```
-![LangGraph Studio 실행 화면](docs/screenshots/studio-run.png)
-![에이전트 응답 예시 - 증상 안내](docs/screenshots/result-symptom.png)
-![에이전트 응답 예시 - 응급 감지](docs/screenshots/result-emergency.png)
 ```
 
 ---
